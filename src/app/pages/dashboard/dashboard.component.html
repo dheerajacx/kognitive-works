@@ -1,0 +1,9 @@
+<acx-navbar page="home"></acx-navbar>
+<div class="container mb-5" *ngIf="kanbanData">
+    <acx-kanban [kanbanData]="kanbanData" *ngIf="kanbanData"></acx-kanban>
+    <h1>Recent Tasks :</h1>
+    <acx-data-table [tasks]="top10Tasks" *ngIf="top10Tasks"></acx-data-table>
+</div>
+<div *ngIf="!kanbanData" class="d-flex justify-content-center align-items-center" style="height: 80vh;width: 100vw;">
+    <acx-loader [mainText]="'Please Wait!!!'" [subText]="'Loading main screen data'"></acx-loader>
+</div>

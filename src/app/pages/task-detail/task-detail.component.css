@@ -1,0 +1,27 @@
+.task-info{
+    font-size: 12px;
+}
+
+.tabs{
+    background-color: var(--acx-bg-secondary);
+    position: sticky;
+    top: 0;
+}
+
+.active{
+    cursor: pointer;
+    padding: 1px 14px;
+    color: var(--acx-bg-primary);
+    border-bottom: 1px solid var(--acx-bg-primary);
+}
+
+.in-active{
+    cursor: pointer;
+    padding: 1px 14px;
+    border-bottom: 1px solid var(--acx-text-primary);
+}
+
+.in-active:hover{
+    color: var(--acx-bg-hover);
+    border-bottom: 1px solid var(--acx-bg-hover);
+}

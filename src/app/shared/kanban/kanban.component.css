@@ -1,0 +1,20 @@
+.value:hover{
+    background-color: var(--acx-bg-hover);
+    color: var(--acx-text-secondary);
+}
+
+.options{
+    background-color: var(--acx-text-secondary);
+    top:30px;
+    right: 2px;
+    padding: 15px;
+    border-radius: 12px;
+    position: absolute;
+}
+
+.kanban-mobile{
+    background-color: var(--acx-bg-secondary);
+    border: 1px solid var(--acx-bg-primary);
+    padding: 8px;
+    border-radius: 12px;
+}

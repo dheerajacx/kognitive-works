@@ -1,0 +1,82 @@
+<div class="my-5 d-none d-md-block">
+    <div class=" text-center">
+        <div class="row gap-2 mb-3">
+            <div class="col">
+                <div class="acx-bg-primary acx-text-tertiary rounded fw-bold p-1">
+                    Task Types
+                </div>
+            </div>
+            <div class="col">
+                <div class="fw-bold rounded p-1">
+                    To do 
+                    <span class="green-circle"></span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="fw-bold rounded p-1">
+                    In progress
+                    <span class="blue-circle"></span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="fw-bold rounded p-1">
+                    Completed 
+                    <span class="red-circle"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row gap-2 mb-2" *ngFor="let category of getObjectKeys(kanbanData.classified)">
+            <div class="col">
+                <div class="acx-border-primary acx-text-primary rounded p-1 acx-bg-tertiary">
+                    {{ spaceAdder(kanbanData.classified[category].name) }}
+                </div>
+            </div>
+            <div class="col">
+                <div class="acx-border-primary acx-text-primary rounded p-1 value" (click)="navgiateToTask('new',kanbanData.classified[category].name)">
+                    {{ kanbanData.classified[category].new }}
+                </div>
+            </div>
+            <div class="col">
+                <div class="acx-border-primary acx-text-primary rounded p-1 value" (click)="navgiateToTask('in-progress',kanbanData.classified[category].name)">
+                    {{ kanbanData.classified[category].inprogress }}
+                </div>
+            </div>
+            <div class="col">
+                <div class="acx-border-primary acx-text-primary rounded p-1 value" (click)="navgiateToTask('completed',kanbanData.classified[category].name)">
+                    {{ kanbanData.classified[category].completed }}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <div class="acx-border-primary acx-text-primary rounded p-1 acx-bg-tertiary">
+                    Unclassified
+                </div>
+            </div>
+            <div class="col-9">
+                <div class="acx-border-primary acx-text-primary rounded p-1 value" (click)="navgiateToTask('status','Miscellaneous')">
+                    {{ kanbanData.unclassified }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="d-md-none mb-2 kanban-mobile">
+    <div class="selector d-flex justify-content-between position-relative">
+        <span>Task Type:</span>
+        <div (click)="toggleOption()"> 
+            <span class="me-2">{{selectedType===""?'Task Type':spaceAdder(selectedType)}}</span>
+            <img src="assets/down.svg" alt="">
+            <div class="options text-end text-nowrap" *ngIf="option">
+                <div *ngFor="let task of tasktypes" (click)="settasktype(task)">{{spaceAdder(task)}}</div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="selectedType" class="container">
+        <div><span class="fw-bold"><span class="green-circle"></span> New: </span>{{kanbanData.classified[selectedType].new}}</div>
+        <div><span class="fw-bold"><span class="blue-circle"></span> In-progress: </span>{{kanbanData.classified[selectedType].inprogress}}</div>
+        <div><span class="fw-bold"><span class="red-circle"></span> Completed: </span>{{kanbanData.classified[selectedType].completed}}</div>
+    </div>
+</div>

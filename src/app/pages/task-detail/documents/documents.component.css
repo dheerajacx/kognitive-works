@@ -1,0 +1,4 @@
+.underline{
+    width: fill;
+    border-bottom: 1px solid var(--acx-text-primary);
+}

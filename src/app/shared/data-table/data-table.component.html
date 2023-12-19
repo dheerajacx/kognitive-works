@@ -1,0 +1,69 @@
+<div class="d-none d-lg-block table-view">
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Sender</th>
+                <th>Subject</th>
+                <th>Status</th>
+                <th>NOA</th>
+                <th>Date</th>
+                <th>Task Type</th>
+            </tr>
+        </thead>
+        <tbody>    
+            <tr *ngFor="let task of tasks; let i = index" (click)="navigateToTask(task.taskId)">
+                <td>{{i+1}}</td>
+                <td class="fw-bold">{{task.sender}}</td>
+                <td>{{task.subject}}</td>
+                <td class="status">
+                        <span>
+                            {{task.workflowStatus}}
+                        </span>
+                        <span class="green-circle" *ngIf="task.workflowStatus==='new'"></span>
+                        <span class="blue-circle" *ngIf="task.workflowStatus==='in-progress'"></span>
+                        <span class="red-circle" *ngIf="task.workflowStatus==='completed'"></span>
+                </td>
+                <td>{{task.numAttachments}}</td>
+                <td class="text-nowrap">{{formatDate(task.creationDate)}}</td>
+                <td class="tasktype">{{spaceAdder(task.taskType)}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="d-none d-md-block d-lg-none">
+    <div class="row mb-4 card-body" *ngFor="let task of tasks;let i = index" (click)="navigateToTask(task.taskId)">
+        <div class="col-6">
+            <div class="fw-bold card-sender"><span>{{i+1}}. </span>{{task.sender}}</div>
+            <div class="">{{task.subject}}</div>
+        </div>
+        <div class="col-6 card-details">
+            <div><span class="fw-semibold">Status: </span>
+                {{task.workflowStatus}}
+                <span class="green-circle" *ngIf="task.workflowStatus==='new'"></span>
+                <span class="blue-circle" *ngIf="task.workflowStatus==='in-progress'"></span>
+                <span class="red-circle" *ngIf="task.workflowStatus==='completed'"></span>
+            </div>
+            <div><span class="fw-semibold">NO of Attachments: </span>{{task.numAttachments}}</div>
+            <div><span class="fw-semibold">Date: </span>{{formatDate(task.creationDate)}}</div>
+            <div class="text-end mt-2 tasktype">{{spaceAdder(task.taskType)}}</div>
+        </div>
+    </div>
+</div>
+
+<div class="d-sm-block d-md-none">
+    <div class="mb-2 list-body" *ngFor="let task of tasks" (click)="navigateToTask(task.taskId)">
+        <div><span class="fw-bold">Sender: </span>{{task.sender}}</div>
+        <div><span class="fw-bold">Subject: </span>{{task.subject}}</div>
+        <div><span class="fw-bold">Status: </span>
+            {{task.workflowStatus}}
+            <span class="green-circle" *ngIf="task.workflowStatus==='new'"></span>
+            <span class="blue-circle" *ngIf="task.workflowStatus==='in-progress'"></span>
+            <span class="red-circle" *ngIf="task.workflowStatus==='completed'"></span>
+        </div>
+        <div><span class="fw-bold">NOA: </span>{{task.numAttachments}}</div>
+        <div><span class="fw-bold">Date: </span>{{formatDate(task.creationDate)}}</div>
+        <div><span class="fw-bold">TaskType: </span>{{task.taskType}}</div>
+    </div>
+</div>

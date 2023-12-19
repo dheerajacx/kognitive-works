@@ -1,1 +1,162 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --acx-bg-primary: #0560FB;
+    --acx-bg-secondary: #EAEEFD;
+    --acx-bg-tertiary: #F9FAFE;
+    --acx-bg-hover:#3E94FD;
+    --acx-text-primary: #232323;
+    --acx-text-secondary: #fff;
+    --acx-text-tertiary: #ffffff;
+    --font-weight-600: 600;
+    --font-weight-400: 400;
+    --font-weight-300: 300;
+  }
+   
+  .acx-bg-primary{
+    background-color: var(--acx-bg-primary);
+  }
+
+  .acx-bg-tertiary{
+    background-color: var(--acx-bg-tertiary);
+  }
+
+  .acx-text-primary{
+    color:var(--acx-bg-primary)
+  }
+
+  .acx-text-tertiary{
+    color:var(--acx-text-tertiary)
+  }
+
+  .acx-border-primary{
+    border: 1px solid var(--acx-bg-primary);
+  }
+
+  .acx-hover:hover{
+    color: var(--acx-bg-hover);
+  }
+
+  body {
+    font-family: Inter, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--acx-bg-secondary);
+    color: var(--acx-text-primary);
+  }
+   
+  h1 {
+    font-weight: var(--font-weight-600);
+    color: var(--acx-text-primary);
+  }
+  h2 {
+    font-weight: var(--font-weight-600);
+    margin-bottom: 1rem;
+    color: var(--acx-text-primary);
+  }
+  p {
+    font-weight: var(--font-weight-400);
+    margin-bottom: 1rem;
+    color: var(--acx-text-primary);
+  }
+
+  .msg{
+    font-weight: var(--font-weight-400);
+    margin-bottom: 1rem;
+    color: var(--acx-text-primary);
+    font-size: 14px;
+  }
+   
+   
+  @media screen and (max-width: 600px) {
+    h1 {
+      font-size: 28px;
+    }
+    h2 {
+      font-size: 14px;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+  @media screen and (min-width: 601px) and (max-width: 800px) {
+    h1 {
+      font-size: 36px;
+    }
+    h2 {
+      font-size: 16px;
+    }
+    p {
+      font-size: 16px;
+    }
+  }
+  @media screen and (min-width: 801px) and (max-width: 1200px) {
+    h1 {
+      font-size: 40px;
+    }
+    h2 {
+      font-size: 20px;
+    }
+    p {
+      font-size: 20px;
+    }
+  }
+  @media screen and (min-width: 1201px) {
+    h1 {
+      font-size: 40px;
+    }
+    h2 {
+      font-size: 20px;
+    }
+    p {
+      font-size: 16px;
+    }
+  }
+
+
+  .green-circle{
+    height: 8px;
+    width: 8px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right:1px;
+    background-color: green;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.blue-circle{
+    height: 8px;
+    width: 8px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right:1px;
+    background-color: blue;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.red-circle{
+    height: 8px;
+    width: 8px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right:1px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+
+.circle{
+  animation: circle 1s linear infinite;
+}
+
+@keyframes circle {
+  from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+}

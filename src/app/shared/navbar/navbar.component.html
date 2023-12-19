@@ -1,0 +1,16 @@
+<nav class="container mb-3">
+    <div class="position-relative py-2">
+        <div class="d-flex justify-content-between align-items-center">
+            <span class="navbar-brand text-dark" style="cursor: pointer;">
+                <!-- <img src="/assets/whiteLogo.svg" height="34px" alt=""> -->
+                <div class="">Kognitive works</div>
+            </span>
+            <div class="d-flex align-items-center gap-3">
+                <!-- profile svg -->
+                    <div [ngClass]="page==='home'?'active':'in-active'" routerLink="/home">Home</div>
+                    <div [ngClass]="page==='task'?'active':'in-active'" routerLink="/tasks">Tasks</div>
+                    <div [ngClass]="page==='profile'?'active':'in-active'" routerLink="/profile">Profile</div>
+            </div>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,13 @@
+.active{
+    text-decoration: underline;
+}
+
+.in-active{
+    cursor: pointer;
+}
+
+nav{
+    background-color:var(--acx-bg-secondary);
+    position: sticky;
+    top: 0;
+}

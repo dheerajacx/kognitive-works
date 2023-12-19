@@ -1,0 +1,11 @@
+.container{
+    border: 1px solid var(--acx-text-primary);
+    width: fill;
+}
+
+.render{
+    background-color: grey;
+    height: 200px;
+    width: fill;
+    margin: auto;
+}

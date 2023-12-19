@@ -1,0 +1,58 @@
+.custom-btn{
+    outline: none;
+    border: 1px solid var(--acx-bg-primary);
+    color: var(--acx-bg-primary);
+    border-radius: 8px;
+    background-color: var(--acx-bg-secondary);
+    padding: 4px 10px;
+}
+
+.filters{
+    position: relative;
+}
+
+.tasktypes{
+    background-color: var(--acx-text-secondary);
+    position: absolute;
+    top:38px;
+    right: 0px;
+    border-radius: 6px;
+    padding: 16px;
+}
+
+input[type=date],[type=number]{
+    outline: none;
+    border: 1px solid var(--acx-bg-primary);
+    border-radius: 6px;
+    padding: 4px;
+    color: var(--acx-bg-primary);
+    background-color: var(--acx-bg-secondary);
+}
+
+input[type=number]{
+    width: 60px;
+}
+
+.filter{
+    background-color: var(--acx-bg-secondary);
+    position: sticky;
+    top: 0;
+}
+
+.custom-input2{
+    padding: 0px;
+    margin: 0px;
+    width: 0px;
+    outline: none;
+    border: none;
+}
+
+.custom-input{
+    padding: 0px;
+    margin: 0px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--acx-bg-primary);
+    background-color: var(--acx-bg-secondary);
+    color: var(--acx-bg-primary);
+}

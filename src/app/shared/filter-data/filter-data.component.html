@@ -1,0 +1,58 @@
+<div class="filter container pt-3 pb-1 mt-3">
+    <div class="icons d-flex gap-3 justify-content-between">
+        <div class=" p-2 d-flex gap-2 rounded">
+            <img src="assets/search.svg" *ngIf="!showSearch" (click)="showSearch=true" alt="">
+            <input [ngClass]="showSearch?'custom-input':'custom-input2'" (input)="searchInput($event)" placeholder="Search" type="text">
+            <img src="assets/close.svg" *ngIf="showSearch" (click)="showSearch=false" alt="">
+        </div>
+        <div class="d-flex gap-2">
+            <img src="assets/refresh.svg" [ngClass]="refreshAnimation?'circle':''" (click)="refresh()" alt="">
+            <img src="assets/filter.svg" (click)="toggleFilter()" style="cursor: pointer;" alt="">
+        </div>
+    </div>
+
+    <div class="mb-2 d-flex flex-column flex-md-row justify-content-end align-items-end gap-3  " *ngIf="filter">
+    <div>
+        <span class="acx-text-primary fw-bold">Date:</span>
+        <input id="date" type="date" (input)="setFilters()" [(ngModel)]="dateInput">
+    </div>
+    
+    <div>
+        <span class="acx-text-primary fw-bold">NOA:</span>
+        <input id="NOA" [(ngModel)]="NOAInput" (input)="setFilters()" type="number">
+    </div>
+    
+    <div class="d-flex gap-3">
+        <!-- tasktype dropdown  -->
+        <button class="custom-btn filters" (click)="toggletasktype()">
+            <span class="me-4">{{tasktypevalue}}</span>
+            <img src="assets/down.svg" alt="">
+            <div class="tasktypes shadow-lg" *ngIf="tasktype">
+                <div class="text-end text-nowrap acx-hover" (click)="settasktype('Task Type')">
+                    All Task Type
+                </div>
+                <div class="text-end text-nowrap acx-hover" (click)="settasktype(tasktype)" *ngFor="let tasktype of tasktypes">
+                    {{formatString(tasktype)}}
+                </div>
+                <div class="text-end text-nowrap acx-hover" (click)="settasktype('Miscellaneous')">
+                    Miscellaneous
+                </div>
+            </div>
+        </button>
+        <!-- status dropdown -->
+        <button class="custom-btn filters" (click)="togglestatus()">
+            <span class="me-4">{{statusvalue}}</span>
+            <img src="assets/down.svg" alt="">
+            <div class="tasktypes shadow-lg" *ngIf="status">
+                <div class="text-end text-nowrap acx-hover" (click)="setstatus(status)" *ngFor="let status of statuses">
+                    {{(status)}}
+                </div>
+                <div class="text-end text-nowrap acx-hover" (click)="setstatus('status')">
+                    All status
+                </div>
+            </div>
+        </button>
+    </div>
+    
+    </div>
+</div>

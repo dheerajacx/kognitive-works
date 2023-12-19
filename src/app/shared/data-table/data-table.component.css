@@ -1,0 +1,61 @@
+/* Styling for the table */
+.styled-table {
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  /* Styling for the table head */
+  .styled-table thead {
+    background-color: var(--acx-bg-primary);
+    color: var(--acx-text-secondary);
+  }
+  
+  .styled-table tbody tr {
+    background-color: var(--acx-bg-tertiary);
+    cursor: pointer;
+  }
+
+  /* Styling for table rows */
+  .styled-table tbody tr:hover {
+    background-color: var(--acx-bg-hover);
+    color: var(--acx-text-secondary);
+  }
+  
+  /* Styling for table cells */
+  .styled-table th,
+  .styled-table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .tasktype{
+    color: var(--acx-bg-primary);
+  }
+  tr:hover .tasktype{
+    color: var(--acx-text-secondary);
+  }
+
+  .status{
+    text-wrap: nowrap;
+  }
+
+.card-body{
+    border: 1px solid var(--acx-bg-primary);
+    border-radius: 12px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.card-details{
+    border-left: 1px solid var(--acx-bg-primary);
+}
+
+.list-body{
+    border: 1px solid var(--acx-bg-primary);
+    border-radius: 6px;
+    padding: 10px;
+    cursor: pointer;
+}

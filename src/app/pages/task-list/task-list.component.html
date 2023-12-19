@@ -1,0 +1,8 @@
+<acx-navbar page="task"></acx-navbar>
+<acx-filter-data (filterData)="filterData()" (refreshData)="refreshData()" [refreshAnimation]="refresh"></acx-filter-data>
+<div class="container mb-5 mx-auto">
+    <acx-data-table [tasks]="displayList" *ngIf="!loading"></acx-data-table>
+</div>
+<div *ngIf="loading" class="d-flex justify-content-center align-items-center" style="height: 60vh;width: 100vw;">
+    <acx-loader [mainText]="'Please Wait!!!'" [subText]="'Loading Tasks'"></acx-loader>
+</div>
